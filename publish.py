@@ -65,7 +65,7 @@ while True:
     sensors['yaw'] = round(float(orientation['yaw']),2)
 
     latest['sensors'] = sensors
-    latest['timestamp'] = int(time.time())
+    latest['timestamp'] = int(time.time()) *1000
     reported['latest'] = latest
     state['reported'] = reported
     message['state'] = state
