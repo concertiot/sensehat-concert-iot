@@ -2,4 +2,4 @@ authUrl = 'https://sso.david-bacon.iotpdev.com/auth/realms/baconRealm/protocol/o
 devicesUrl='https://api.david-bacon.iotpdev.com/api/1/devices'
 
 #Device Details
-deviceTypeId='b5a9078d-3651-4c45-84c7-f3aad60962d1'
+deviceTypeId='0a4edd55-f287-4b3b-8aed-a0f4b54405a7'
