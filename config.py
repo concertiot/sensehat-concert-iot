@@ -1,4 +1,4 @@
-authUrl = 'https://sso.demo.concert-iot.com/auth/realms/baconRealm/protocol/openid-connect/token'
+authUrl = 'https://sso.demo.concert-iot.com/auth/realms/demoRealm/protocol/openid-connect/token'
 devicesUrl='https://api.demo.concert-iot.com/api/1/devices'
 
 #Device Details
