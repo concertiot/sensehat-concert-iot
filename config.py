@@ -1,5 +1,5 @@
-authUrl = 'https://sso.david-bacon.iotpdev.com/auth/realms/baconRealm/protocol/openid-connect/token'
-devicesUrl='https://api.david-bacon.iotpdev.com/api/1/devices'
+authUrl = 'https://sso.demo.concert-iot.com/auth/realms/baconRealm/protocol/openid-connect/token'
+devicesUrl='https://api.demo.concert-iot.com/api/1/devices'
 
 #Device Details
-deviceTypeId='0a4edd55-f287-4b3b-8aed-a0f4b54405a7'
+deviceTypeId='a7332e68-ba97-4dae-93ab-2b25a42423ee'
