@@ -34,7 +34,7 @@ deviceHeader = {"Authorization" : "Bearer " + access_token, "Content-Type" : "ap
 deviceName = input("Name for new device: ")
 
 try:
-	createResponse = requests.post(config.devicesUrl, headers = deviceHeader, json = {"name" : deviceName, "typeId" : config.deviceTypeId})
+	createResponse = requests.post(config.devicesUrl, headers = deviceHeader, json = {"name": deviceName,"typeId": config.deviceTypeId,"description": "Raspberry Pi with SenseHat","attributes": {},"location": {"longitude": -5.918212,"latitude": 54.606314}})
 except requests.exceptions.RequestException as e:
 	print("Response Exception Raised on device URL: {0}".format(str(e)))
 	print("Address Exception: Quitting")
