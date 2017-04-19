@@ -1,5 +1,13 @@
-authUrl = 'https://sso.demo.concert-iot.com/auth/realms/demoRealm/protocol/openid-connect/token'
-devicesUrl='https://api.demo.concert-iot.com/api/1/devices'
+concertURL = 'demo.concert-iot.com'
+
+authTokenAPI = '/auth/realms/sensehat/protocol/openid-connect/token'
+devicesAPI = '/api/1/devices'
+deviceTypesAPI = '/api/1/device-types'
+
+authUrl = 'https://sso.' + concertURL + authTokenAPI
+devicesUrl='https://api.' + concertURL + devicesAPI
+deviceTypesUrl = 'https://api.' + concertURL + deviceTypesAPI
+
 
 #Device Details
-deviceTypeId='a7332e68-ba97-4dae-93ab-2b25a42423ee'
+deviceTypeId='2e3422a4-5bcc-4f6d-a0c8-a290ec5713a9'

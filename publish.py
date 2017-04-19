@@ -10,13 +10,15 @@ from time import sleep
 from sense_hat import SenseHat
 from pprint import pprint
 
+
 connflag = False
 
 f = open('deviceId', 'r')
 deviceId = f.read()
 f.close()
 
-print ("Publishing sensor readings for device : {0}".format(deviceId))
+
+print ("Publishing sensor readings for device: {0}".format(deviceId))
 
 pubFrequency = float(input("Enter publish frequency in seconds [10]: ") or 10)
 
@@ -33,7 +35,7 @@ sense = SenseHat()
 mqttc = paho.Client()
 mqttc.on_connect = on_connect
 
-awshost = "a3jryi24u1zuve.iot.eu-west-1.amazonaws.com"
+awshost = "a2cg1hqpl5l7ve.iot.eu-west-1.amazonaws.com"
 awsport = 8883
 clientId = "rpisensehat-publisher"
 caPath = "root-CA.crt"
@@ -41,7 +43,13 @@ certPath = deviceId + '.cert.pem'
 keyPath = deviceId + '.private.key'
 green = (0, 255, 0)
 
-mqttc.tls_set(caPath, certfile=certPath, keyfile=keyPath, cert_reqs=ssl.CERT_REQUIRED, tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
+mqttc.tls_set(caPath, 
+              certfile=certPath, 
+              keyfile=keyPath, 
+              cert_reqs=ssl.CERT_REQUIRED, 
+              tls_version=ssl.PROTOCOL_TLSv1_2, 
+              ciphers=None)
+              
 mqttc.connect(awshost, awsport, keepalive=60)
 
 mqttc.loop_start()
