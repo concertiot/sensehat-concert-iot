@@ -49,6 +49,7 @@ deviceHeader = {"Authorization" : "Bearer " + access_token,
 deviceName = input("Name for new device: ")
 
 try:
+
 	createResponse = requests.post(config.devicesUrl, 
 	                               headers = deviceHeader, 
 	                               json = {"name": deviceName,
@@ -60,6 +61,7 @@ try:
 	                                                    }
 	                                      }
 	                              )
+
 except requests.exceptions.RequestException as e:
 	print("Response Exception Raised on device URL: {0}".format(str(e)))
 	print("Address Exception: Quitting")
