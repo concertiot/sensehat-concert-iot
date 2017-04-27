@@ -86,16 +86,16 @@ f.close()
 
 fileName = deviceId + '.private.key'
 f = open(fileName, 'w')
-f.write(createdDevice['privateKey'])
+f.write(createdDevice['mqtt']['privateKey'])
 f.close()
 
 fileName = deviceId + '.cert.pem'
 f = open(fileName, 'w')
-f.write(createdDevice['certificate'])
+f.write(createdDevice['mqtt']['certificate'])
 f.close()
 
 fileName = deviceId + '.public.key'
 f = open(fileName, 'w')
-f.write(createdDevice['publicKey'])
+f.write(createdDevice['mqtt']['publicKey'])
 f.close()
 
