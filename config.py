@@ -10,4 +10,4 @@ deviceTypesUrl = 'https://api.' + concertURL + deviceTypesAPI
 
 
 #Device Details
-deviceTypeId='6d0debbf-3f36-42f4-ac5c-06e421d8ae4c'
+deviceTypeId='ed718da3-0fbb-423b-9aae-d610e52a0c93'
