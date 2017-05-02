@@ -69,6 +69,9 @@ f = open('deviceId', 'r')
 deviceId = f.read()
 f.close()
 
+f = open('awshost', 'r')
+awshost = f.read()
+f.close()
 
 print ("Publishing sensor readings for device: {0}".format(deviceId))
 
@@ -87,7 +90,6 @@ sense = SenseHat()
 mqttc = paho.Client()
 mqttc.on_connect = on_connect
 
-awshost = "a2cg1hqpl5l7ve.iot.eu-west-1.amazonaws.com"
 awsport = 8883
 clientId = "rpisensehat-publisher"
 caPath = "root-CA.crt"
