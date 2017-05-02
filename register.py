@@ -84,6 +84,11 @@ f = open(fileName, 'w')
 f.write(deviceId)
 f.close()
 
+fileName = 'awshost'
+f = open(fileName, 'w')
+f.write(createdDevice['mqtt']['host'])
+f.close()
+
 fileName = deviceId + '.private.key'
 f = open(fileName, 'w')
 f.write(createdDevice['mqtt']['privateKey'])
