@@ -55,6 +55,7 @@ try:
 	                               json = {"name": deviceName,
 	                                       "typeId": config.deviceTypeId,
 	                                       "description": "Raspberry Pi with SenseHat",
+					       "owner": "a6102156-a9f4-4e7a-b544-a237b249851d",
 	                                       "attributes": {},
 	                                       "location": {"longitude": -5.918212,
 	                                                    "latitude": 54.606314
