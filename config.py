@@ -1,6 +1,6 @@
 concertURL = 'demo.concert-iot.com'
 
-authTokenAPI = '/auth/realms/sensehat/protocol/openid-connect/token'
+authTokenAPI = '/auth/realms/authenticate/protocol/openid-connect/token'
 devicesAPI = '/api/1/devices'
 deviceTypesAPI = '/api/1/device-types'
 
@@ -10,4 +10,4 @@ deviceTypesUrl = 'https://api.' + concertURL + deviceTypesAPI
 
 
 #Device Details
-deviceTypeId='ed718da3-0fbb-423b-9aae-d610e52a0c93'
+deviceTypeId='6c21d5c9-34fa-46dd-8155-c8461cb2e6b5'
