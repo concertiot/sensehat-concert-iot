@@ -17,7 +17,7 @@ authHeaders = {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8
 
 userName = input("Concert username[iotpadminuser]: ") or "iotpadminuser"
 password = getpass.getpass("Password for {0}: ".format(userName))
-
+accountName = input("Account Name to own device : ")
 try:
 	print("authURL: {0}".format(config.authUrl))
 	
@@ -46,6 +46,26 @@ access_token = keycloak['access_token']
 deviceHeader = {"Authorization" : "Bearer " + access_token, 
                 "Content-Type" : "application/json"}
 
+
+try:
+
+	getAccResponse = requests.get(config.accountUrl, 
+	                               headers = deviceHeader, 
+	                               json = {}
+	                              )
+
+except requests.exceptions.RequestException as e:
+	print("Response Exception Raised on Account URL: {0}".format(str(e)))
+	print("Address Exception: Quitting")
+	exit(1)
+	
+accounts = getAccResponse.json()
+for i in accounts:
+	if i['name'] == accountName:
+		accountId = i['id']
+		
+print ("Account ID : " + accountid)
+
 deviceName = input("Name for new device: ")
 
 try:
@@ -55,7 +75,7 @@ try:
 	                               json = {"name": deviceName,
 	                                       "typeId": config.deviceTypeId,
 	                                       "description": "Raspberry Pi with SenseHat",
-					       "owner": "a6102156-a9f4-4e7a-b544-a237b249851d",
+					       "owner": accountId,
 	                                       "attributes": {},
 	                                       "location": {"longitude": -5.918212,
 	                                                    "latitude": 54.606314
