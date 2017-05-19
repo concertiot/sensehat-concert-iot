@@ -64,7 +64,7 @@ for i in accounts:
 	if i['name'] == accountName:
 		accountId = i['id']
 		
-print ("Account ID : " + accountid)
+print ("Account ID : " + accountId)
 
 deviceName = input("Name for new device: ")
 
