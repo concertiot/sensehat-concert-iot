@@ -51,10 +51,13 @@ def buildJSONStrAWS(accel_rawo,accel_rawg,gyro_rawo, gyro_rawg,comp,hum,temp, pr
 	sensors["Gyro Y"] = round(gyro_rawg['y'],2)
 	sensors["Gyro X"] = round(gyro_rawg['x'],2)
 	sensors["Gyro Z"] = round(gyro_rawg['z'],2)
+	
+	#sensors["LED"] = "Feck Away Off"
+	#sensors["Switch"] = 0
 
 
 	latest['sensors'] = sensors
-	latest['timestamp'] = int(time.time()) *1000
+	latest['timestamp'] = int(time.time() *1000)
 	reported['latest'] = latest
 	state['reported'] = reported
 	message['state'] = state
@@ -68,10 +71,10 @@ connflag = False
 f = open('deviceId', 'r')
 deviceId = f.read()
 f.close()
-
-f = open('awshost', 'r')
+f = open('awsHost','r')
 awshost = f.read()
 f.close()
+
 
 print ("Publishing sensor readings for device: {0}".format(deviceId))
 
@@ -91,7 +94,7 @@ mqttc = paho.Client()
 mqttc.on_connect = on_connect
 
 awsport = 8883
-clientId = "rpisensehat-publisher"
+#clientId = "rpisensehat-publisher"
 caPath = "root-CA.crt"
 certPath = deviceId + '.cert.pem'
 keyPath = deviceId + '.private.key'
